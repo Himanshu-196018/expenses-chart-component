@@ -9,9 +9,9 @@ const Spending = () => {
       <section>
         <div>
           <p>Total this month</p>
-          <span>$478.33</span>
+          <span className="total">$478.33</span>
         </div>
-        <div>
+        <div className="align-right">
           <span>+2.4%</span>
           <p>from last month</p>
         </div>
