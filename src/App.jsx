@@ -3,10 +3,10 @@ import Spending from "./components/Spending";
 
 const App = () => {
   return (
-    <main>
+    <>
       <Header />
       <Spending />
-    </main>
+    </>
   );
 };
 
