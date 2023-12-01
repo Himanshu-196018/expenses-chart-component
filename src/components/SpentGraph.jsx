@@ -1,50 +1,34 @@
-import CanvasJSReact from "@canvasjs/react-charts";
-
-const CanvasJS = CanvasJSReact.CanvasJS;
-const CanvasJSChart = CanvasJSReact.CanvasJSChart;
+import Chart from "chart.js/auto";
+import { Bar } from "react-chartjs-2";
 
 const SpentGraph = () => {
-  const options = {
-    data: [
+  const data = {
+    labels: ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
+    datasets: [
       {
-        type: "column",
-        dataPoints: [
-          {
-            label: "mon",
-            y: 17.45,
-          },
-          {
-            label: "tue",
-            y: 34.91,
-          },
-          {
-            label: "wed",
-            y: 52.36,
-          },
-          {
-            label: "thu",
-            y: 31.07,
-          },
-          {
-            label: "fri",
-            y: 23.39,
-          },
-          {
-            label: "sat",
-            y: 43.28,
-          },
-          {
-            label: "sun",
-            y: 25.48,
-          },
-        ],
+        data: [17.45, 34.91, 52.36, 31.07, 23.39, 43.28, 25.48],
+        backgroundColor: "hsl(10, 79%, 65%)",
+        borderColor: "rgba(0,0,0,0)",
+        borderWidth: 1,
       },
     ],
   };
 
+  const options = {
+    scales: {
+      x: {
+        type: "category",
+      },
+      y: {
+        type: "linear",
+        beginAtZero: true,
+      },
+    },
+  };
+
   return (
     <div>
-      <CanvasJSChart options={options} />
+      <Bar data={data} options={options} />
     </div>
   );
 };
