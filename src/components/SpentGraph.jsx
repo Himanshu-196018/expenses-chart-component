@@ -7,9 +7,18 @@ const SpentGraph = () => {
     datasets: [
       {
         data: [17.45, 34.91, 52.36, 31.07, 23.39, 43.28, 25.48],
-        backgroundColor: "hsl(10, 79%, 65%)",
+        backgroundColor: [
+          "hsl(10, 79%, 65%)",
+          "hsl(10, 79%, 65%)",
+          "hsl(186, 34%, 60%)",
+          "hsl(10, 79%, 65%)",
+          "hsl(10, 79%, 65%)",
+          "hsl(10, 79%, 65%)",
+          "hsl(10, 79%, 65%)",
+        ],
         borderColor: "rgba(0,0,0,0)",
         borderWidth: 1,
+        borderRadius: 4,
       },
     ],
   };
@@ -18,16 +27,25 @@ const SpentGraph = () => {
     scales: {
       x: {
         type: "category",
+        grid: {
+          display: false,
+        },
       },
       y: {
         type: "linear",
         beginAtZero: true,
+        display: false,
+      },
+    },
+    plugins: {
+      legend: {
+        display: false,
       },
     },
   };
 
   return (
-    <div>
+    <div className="bar-component">
       <Bar data={data} options={options} />
     </div>
   );
